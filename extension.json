@@ -1,0 +1,48 @@
+{
+	"name": "Wikidonca Analytics",
+	"version": "0.7.1 alpha",
+	"author": [
+		"[https://www.mediawiki.org/wiki/User:Cesarinik Riccardo Cesarini]"
+	],
+	"url": "https://github.com/cesarinik/WikidoncaAnalytics",
+	"description": "Basato sul progetto [https://www.mediawiki.org/wiki/Extension:Google_Analytics_Integration Google Analytics Integration] (di [https://www.mediawiki.org/wiki/User:DavisNT Davis Mosenkovs] e Tim Laqua), aggiornato al nuovo formato JSON, inoltre personalizzato e modificato, inserisce lo script di monitoraggio visitatori di Google Analytics nelle pagine wiki.",
+	"license-name": "GPL-2.0-or-later",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
+	"AutoloadClasses": {
+		"WikidoncaAnalyticsHooks": "WikidoncaAnalytics.hooks.php"
+	},
+	"Hooks": {
+		"SkinAfterBottomScripts": "WikidoncaAnalyticsHooks::InserisciCodice",
+		"UnitTestsList": "WikidoncaAnalyticsHooks::TestsList"
+	},
+	"config": {
+		"WikidoncaAnalyticsAccount": {
+			"value": ""
+		},
+		"WikidoncaAnalyticsIPAnonimo": {
+			"value": true
+		},
+		"WikidoncaAnalyticsAltroCodice": {
+			"value": ""
+		},
+		"WikidoncaAnalyticsIgnoraNamespaceID": {
+			"value": []
+		},
+		"WikidoncaAnalyticsIgnoraPagine": {
+			"value": []
+		},
+		"WikidoncaAnalyticsIgnoraSpeciali": {
+			"value": [
+				"Userlogin",
+				"CreateAccount",
+				"Userlogout",
+				"Preferences",
+				"ChangePassword"
+			]
+		}
+	},
+	"manifest_version": 2
+}
